@@ -38,7 +38,19 @@ function App() {
 		<div className="App">
 			<div className="books">
 				{books.map((book, i) => {
-					return <Book book={book} key={i} />;
+					<div className="book">
+						<a href={book.bookUrl} target="_blank">
+							<img className="cover" src={book.imageUrl} />
+						</a>
+						<div className="info">
+							<div className="title">
+								<a href={book.bookUrl} target="_blank">
+									{book.title}
+								</a>
+							</div>
+							<div className="author">{book.author}</div>
+						</div>
+					</div>
 				})}
 			</div>
 		</div>

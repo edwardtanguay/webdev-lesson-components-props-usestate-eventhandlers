@@ -1,0 +1,14 @@
+- x install react
+- x build api
+- x make route searchbooks
+- x get all books with keyword: https://gutendex.com/books/?search=nietzsche
+- x build in search hard-coded
+- x with input textbox
+
+
+- x sass
+- x top area fixed
+- x waiting spinner
+- ,, show with more fields and graphic, links to books
+	- .. dummy graphic
+	- show graphic first

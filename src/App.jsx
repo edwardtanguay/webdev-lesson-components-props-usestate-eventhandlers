@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.scss';
 
-const _books = [
+const books = [
 	{
 		id: 1,
 		title: 'Building Microservices',
@@ -29,25 +29,26 @@ const _books = [
 ];
 
 function App() {
-	const [books, setBooks] = useState(_books);
-
 	return (
 		<div className="App">
+			<h2>{books.length} Books</h2>
 			<div className="books">
 				{books.map((book, i) => {
-					<div className="book">
-						<a href={book.bookUrl} target="_blank">
-							<img className="cover" src={book.imageUrl} />
-						</a>
-						<div className="info">
-							<div className="title">
-								<a href={book.bookUrl} target="_blank">
-									{book.title}
-								</a>
+					return (
+						<div className="book" key={i}>
+							<a href={book.bookUrl} target="_blank">
+								<img className="cover" src={book.imageUrl} />
+							</a>
+							<div className="info">
+								<div className="title">
+									<a href={book.bookUrl} target="_blank">
+										{book.title}
+									</a>
+								</div>
+								<div className="author">{book.author}</div>
 							</div>
-							<div className="author">{book.author}</div>
 						</div>
-					</div>
+					);
 				})}
 			</div>
 		</div>

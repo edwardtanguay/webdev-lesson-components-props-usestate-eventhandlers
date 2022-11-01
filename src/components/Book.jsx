@@ -1,6 +1,6 @@
 export const Book = ({book}) => {
 	return (
-		<div key={i} className="book">
+		<div className="book">
 			<a href={book.bookUrl} target="_blank">
 				<img className="cover" src={book.imageUrl} />
 			</a>

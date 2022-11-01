@@ -22,6 +22,7 @@ body {
 		from {
 			transform: rotate(0deg);
 		}
+
 		to {
 			transform: rotate(360deg);
 		}
@@ -34,23 +35,34 @@ body {
 	.book {
 		display: flex;
 		padding: 20px;
+
+		img {
+			border: 1px solid #444;
+			box-shadow: 3px 2px 7px -4px #000;
+		}
+
 		.cover {
 			min-width: 100px;
 			max-width: 100px;
 		}
+
 		.info {
 			margin: 0 0 0 10px;
+
 			.title {
 				font-size: 1.4rem;
 				font-weight: bold;
+
 				a {
-					color:#fff;
+					color: #fff;
 					text-decoration: none;
+
 					&:hover {
 						text-decoration: underline;
 					}
 				}
 			}
+
 			.author {
 				font-size: 1.2rem;
 				color: rgb(231, 231, 147);

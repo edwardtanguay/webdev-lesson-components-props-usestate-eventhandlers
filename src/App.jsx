@@ -1,42 +1,48 @@
-import { useState, useEffect } from 'react'
-import './App.scss'
-import { FaSpinner } from 'react-icons/fa';
+import { useState } from 'react';
+import './App.scss';
 import { Book } from './components/Book';
 
-function App() {
-	const [books, setBooks] = useState([]);
-	const [searchText, setSearchText] = useState([]);
-	const [searchingBooks, setSearchingBooks] = useState(true);
-
-
-
-	const handleButtonClick = () => {
-		setBooks([]);
-		lookupBooks();
+const _books = [
+	{
+		id: 1,
+		title: 'Building Microservices',
+		author: 'Sam Newman',
+		bookUrl: 'https://edwardtanguay.vercel.app/techBooks?id=1',
+		imageUrl:
+			'https://edwardtanguay.vercel.app/customImages/techBooks/buildingMicroservices.jpg'
+	},
+	{
+		id: 2,
+		title: 'Gatsby E-Commerce',
+		author: 'Alex Libby',
+		bookUrl: 'https://edwardtanguay.vercel.app/techBooks?id=2',
+		imageUrl:
+			'https://edwardtanguay.vercel.app/customImages/techBooks/gatsbyEcommerce.jpg'
+	},
+	{
+		id: 3,
+		title: 'Rust Web Programming',
+		author: 'Maxwell Flitton',
+		bookUrl: 'https://edwardtanguay.vercel.app/techBooks?id=3',
+		imageUrl:
+			'https://edwardtanguay.vercel.app/customImages/techBooks/rustWeb.jpg'
 	}
+];
+
+function App() {
+	const [books, setBooks] = useState(_books);
+	const [searchText, setSearchText] = useState([]);
+	const [searchingBooks, setSearchingBooks] = useState(false);
 
 	return (
 		<div className="App">
-			<h1>Gutenberg Project Books Search</h1>
-			{searchingBooks && (
-				<div><FaSpinner className="spinner" /></div>
-			)}
-			{!searchingBooks && (
-				<>
-					<input className="searchText" autoFocus type="text" value={searchText} onChange={(e) => setSearchText(e.target.value)} />
-					<button className="btnSearch" onClick={handleButtonClick}>Search</button>
-					{books.length === 0 && (
-						<div className="message">No books found.</div>
-					)}
-					<div className="books">
-						{books.map((book, i) => {
-							<Book book={book} key={i} />
-						})}
-					</div>
-				</>
-			)}
+			<div className="books">
+				{books.map((book, i) => {
+					return <Book book={book} key={i} />;
+				})}
+			</div>
 		</div>
-	)
+	);
 }
 
-export default App
+export default App;

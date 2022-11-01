@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import './App.scss';
-import { Book } from './components/Book';
 
 const _books = [
 	{
@@ -31,8 +30,6 @@ const _books = [
 
 function App() {
 	const [books, setBooks] = useState(_books);
-	const [searchText, setSearchText] = useState([]);
-	const [searchingBooks, setSearchingBooks] = useState(false);
 
 	return (
 		<div className="App">
